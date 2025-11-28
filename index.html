@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Millenne Advisors | Charity Investment Oversight & CAIF Allocation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Independent charity investment oversight and CAIF allocation guidance for UK charities with £1m–£20m in long-term assets."
+  />
+  <style>
+    :root {
+      --bg: #f7f4f0;
+      --primary: #e8e2db;
+      --stone: #dad2c9;
+      --rose: #c49a8b;
+      --terracotta: #d68f7a;
+      --sage: #647c64;
+      --navy: #1e3a5f;
+      --text-main: #2b2b2b;
+      --text-muted: #6b6b6b;
+      --white: #ffffff;
+      --radius-lg: 1.2rem;
+      --radius-md: 0.9rem;
+      --shadow-soft: 0 18px 38px rgba(0, 0, 0, 0.08);
+      --transition-fast: 0.2s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Header & Nav */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(247, 244, 240, 0.94);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0.9rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 0, var(--terracotta), var(--navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text span:first-child {
+      font-weight: 600;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--terracotta);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-pill {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(30, 58, 95, 0.07);
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Buttons */
+
+    .btn-primary,
+    .btn-outline {
+      border-radius: 999px;
+      padding: 0.6rem 1.25rem;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast), color var(--transition-fast),
+        border-color var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--navy), var(--sage));
+      color: var(--white);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.16);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+    }
+
+    /* Layout */
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    section {
+      margin-bottom: 3.25rem;
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-lead {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      max-width: 36rem;
+      margin-bottom: 1.4rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.5fr);
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(214, 143, 122, 0.12);
+      color: var(--terracotta);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 2.9vw + 1rem, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 span {
+      color: var(--navy);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 35rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-metas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-metas span {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .hero-metas strong {
+      font-size: 1.1rem;
+      color: var(--navy);
+    }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 1.4rem 1.5rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-header strong {
+      color: var(--navy);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-card-metric {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-card-metric span {
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .hero-chart {
+      height: 150px;
+      border-radius: 1.1rem;
+      background: linear-gradient(
+        135deg,
+        rgba(30, 58, 95, 0.09),
+        rgba(214, 143, 122, 0.26)
+      );
+      position: relative;
+      overflow: hidden;
+      padding: 0.5rem;
+    }
+
+    .hero-chart::before,
+    .hero-chart::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255, 255, 255, 0.7);
+      transform: skewX(-14deg);
+    }
+
+    .hero-chart::before {
+      inset: 25% 50% 15% 8%;
+    }
+
+    .hero-chart::after {
+      inset: 40% 10% 8% 45%;
+      opacity: 0.8;
+    }
+
+    .hero-chart-baseline {
+      position: absolute;
+      inset: auto 8% 26%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-card-footer {
+      margin-top: 0.9rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card-footer strong {
+      color: var(--navy);
+    }
+
+    /* Grids & Cards */
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.2rem;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.04);
+      font-size: 0.9rem;
+    }
+
+    .card small {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin: 0.25rem 0 0.45rem;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.7rem;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--text-main);
+    }
+
+    /* Process & Split */
+
+    .process {
+      display: grid;
+      grid-template-columns: minmax(0, 2.3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .process-steps {
+      border-left: 2px solid rgba(30, 58, 95, 0.16);
+      padding-left: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    .process-step {
+      position: relative;
+      padding-left: 0.15rem;
+    }
+
+    .process-step::before {
+      content: "";
+      position: absolute;
+      left: -1.2rem;
+      top: 0.35rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--navy);
+      box-shadow: 0 0 0 4px rgba(30, 58, 95, 0.18);
+    }
+
+    .process-step-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .process-step-body {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .process-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: rgba(30, 58, 95, 0.03);
+      padding: 0.8rem 0.9rem;
+      border-radius: var(--radius-md);
+      margin-top: 0.75rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .stat-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.9rem;
+      font-size: 0.83rem;
+    }
+
+    .stat {
+      background: rgba(232, 226, 219, 0.6);
+      border-radius: 0.9rem;
+      padding: 0.7rem 0.8rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--navy);
+    }
+
+    /* Contact */
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      font-size: 0.88rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(0, 0, 0, 0.16);
+      font: inherit;
+      background: #fbfaf8;
+      resize: vertical;
+      min-height: 0;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 2px solid rgba(30, 58, 95, 0.3);
+      border-color: transparent;
+      background: #ffffff;
+    }
+
+    .disclaimer {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: rgba(30, 58, 95, 0.04);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 0.9rem;
+    }
+
+    .disclaimer strong {
+      color: var(--navy);
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 1.7rem 1.25rem 2.2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+    }
+
+    /* Cookie Banner */
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 460px;
+      width: 92%;
+      background: var(--white);
+      border-radius: 1rem;
+      box-shadow: var(--shadow-soft);
+      padding: 0.95rem 1rem 0.9rem;
+      font-size: 0.85rem;
+      z-index: 40;
+      display: none;
+    }
+
+    .cookie-banner h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .cookie-banner p {
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .cookie-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cookie-banner button {
+      font-size: 0.8rem;
+      padding: 0.45rem 0.95rem;
+    }
+
+    .cookie-link {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 960px) {
+      .hero,
+      .process,
+      .split,
+      .contact-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        max-width: 360px;
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .stat-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<!-- Body -->
+<body>
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner" aria-live="polite">
+    <h3>Cookies on this website</h3>
+    <p>
+      We use essential cookies to remember choices such as this consent. At
+      present we do not use cookies for advertising. You can choose essential
+      cookies only or allow all cookies so analytics can be added in future.
+    </p>
+    <div class="cookie-actions">
+      <button id="cookie-decline" class="btn-outline" type="button">
+        Essential only
+      </button>
+      <button id="cookie-accept" class="btn-primary" type="button">
+        Accept all cookies
+      </button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-mark">M</div>
+        <div class="logo-text">
+          <span>Millenne Advisors</span>
+          <span>Charity Investment Oversight</span>
+        </div>
+      </div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#who">Who we help</a>
+        <a href="#services">Services</a>
+        <a href="#caifs">Why CAIFs</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <span class="nav-pill">UK charities · £1m–£20m</span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="hero-tag">
+          Independent oversight for charity investment portfolios
+        </div>
+        <h1 id="hero-title">
+          Help your charity’s capital
+          <span>work as hard as its mission.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Millenne Advisors works with UK charities holding
+          <strong>£1m–£20m</strong> in long-term assets. We support two common
+          situations: when you are <strong>investing for the first time</strong>
+          and need a clear Investment Policy Statement and CAIF allocation
+          framework, and when you have <strong>already invested but results have
+          not met expectations</strong> and trustees want an independent second
+          opinion.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" type="button" onclick="scrollToSection('contact')">
+            Request a portfolio health check
+          </button>
+          <button class="btn-outline" type="button" onclick="scrollToSection('services')">
+            View services
+          </button>
+        </div>
+        <div class="hero-metas" aria-label="Key facts">
+          <span>
+            <small>Client type</small>
+            <strong>UK charities &amp; trusts</strong>
+          </span>
+          <span>
+            <small>Typical portfolio size</small>
+            <strong>£1m–£20m</strong>
+          </span>
+          <span>
+            <small>Vehicles</small>
+            <strong>CAIFs &amp; charity funds</strong>
+          </span>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Example charity portfolio diagnostic">
+        <div class="hero-card-header">
+          <strong>Portfolio Health Check</strong>
+          <span>Example snapshot</span>
+        </div>
+        <div class="hero-card-metric">
+          5-year result vs inflation:
+          <span>-3.8% in real terms</span>
+        </div>
+        <div class="hero-card-metric">
+          Key driver:
+          <span>Underweight global CAIFs, overweight cash</span>
+        </div>
+        <div class="hero-chart" aria-hidden="true">
+            <img 
+              src="pic1.jpg"
+              alt="Example charity portfolio vs CPI chart"
+              style="width: 100%; height: 100%; border-radius: 0.8rem;"              
+            >
+        </div>
+        <div class="hero-card-footer">
+          <strong>What trustees receive:</strong> a clear, board-ready view of
+          whether outcomes reflect markets, asset mix or manager choice – plus
+          practical options for next steps.
+        </div>
+      </aside>
+    </section>
+
+    <!-- Who we help -->
+    <section id="who" aria-labelledby="who-title">
+      <h2 id="who-title">Who we help</h2>
+      <p class="section-lead">
+        We specialise in helping charity boards and trustees who oversee
+        long-term investment portfolios and want clarity on how best to use
+        CAIFs and other charity funds.
+      </p>
+
+      <div class="grid-3">
+        <!-- Segment 1: New to investing -->
+        <div class="card">
+          <small>Starting to invest</small>
+          <h3>Never invested &amp; no IPS</h3>
+          <p>
+            Charities with growing reserves or newly received capital that has
+            not yet been invested, and where there is no formal Investment
+            Policy Statement to guide decisions or CAIF selection.
+          </p>
+          <div class="pill-row">
+            <span class="pill">First-time investing</span>
+            <span class="pill">No IPS yet</span>
+            <span class="pill">Need CAIF framework</span>
+          </div>
+        </div>
+
+        <!-- Segment 2: Already invested, disappointed -->
+        <div class="card">
+          <small>Already invested</small>
+          <h3>Invested, but not as expected</h3>
+          <p>
+            Charities that already hold CAIFs or other charity funds but have
+            seen disappointing results: capital erosion, volatility or persistent
+            underperformance versus reasonable benchmarks.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Assets have fallen</span>
+            <span class="pill">Performance concerns</span>
+            <span class="pill">Preparing for review</span>
+          </div>
+        </div>
+
+        <!-- Trustees -->
+        <div class="card">
+          <small>Trustee boards</small>
+          <h3>High responsibility, limited time</h3>
+          <p>
+            Boards and finance committees who are legally responsible for
+            investment decisions, want to act prudently, and need concise,
+            jargon-free analysis they can rely on when setting or reviewing
+            their investment arrangements.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Governance support</span>
+            <span class="pill">Plain-English reporting</span>
+            <span class="pill">Independent oversight</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" aria-labelledby="services-title">
+      <h2 id="services-title">What we do</h2>
+      <p class="section-lead">
+        We do not manufacture products or run a platform. We sit alongside you
+        as an independent partner, helping you decide <em>if</em>, <em>how</em>
+        and <em>where</em> CAIFs and other charity funds should fit within your
+        long-term portfolio.
+      </p>
+
+      <div class="grid-3">
+        <!-- Service 1: For new investors -->
+        <article class="card">
+          <small>Service 1</small>
+          <h3>Investment Policy &amp; First-Time Allocation</h3>
+          <p>
+            For charities that have never invested before, we help you design a
+            clear, board-approved Investment Policy Statement and a sensible
+            long-term asset mix, including how CAIFs might be used, so your
+            first step into investing is structured and aligned with your
+            mission and risk tolerance.
+          </p>
+          <div class="pill-row">
+            <span class="pill">IPS from scratch</span>
+            <span class="pill">Risk &amp; return objectives</span>
+            <span class="pill">CAIF role &amp; selection criteria</span>
+          </div>
+        </article>
+
+        <!-- Service 2: For existing portfolios -->
+        <article class="card">
+          <small>Service 2</small>
+          <h3>Portfolio Health Check &amp; Manager Review</h3>
+          <p>
+            For charities that already invest, we analyse performance, risk,
+            asset mix and fees, focusing on your use of CAIFs and other charity
+            funds. We then provide an independent view on whether issues lie
+            with markets, allocation or managers – and outline pragmatic options.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Performance vs benchmark</span>
+            <span class="pill">Asset mix &amp; CAIF usage</span>
+            <span class="pill">Manager &amp; fee assessment</span>
+          </div>
+        </article>
+
+        <!-- Service 3: Ongoing -->
+        <article class="card">
+          <small>Service 3</small>
+          <h3>Ongoing Oversight &amp; Trustee Support</h3>
+          <p>
+            For boards that want a steady, independent voice alongside them, we
+            provide periodic reviews, trustee education and input during manager
+            beauty-parades or re-tenders, whether you are establishing a first
+            CAIF-based structure or refining an existing line-up.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Quarterly / annual reviews</span>
+            <span class="pill">Trustee training sessions</span>
+            <span class="pill">Support on change</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why CAIFs -->
+    <section id="caifs" aria-labelledby="caifs-title">
+      <h2 id="caifs-title">Why focus on CAIFs?</h2>
+      <p class="section-lead">
+        Charity Authorised Investment Funds (CAIFs) are designed specifically
+        for charities, but that does not make every CAIF automatically suitable.
+        We help you understand where they fit – and where they may not.
+      </p>
+
+      <div class="split">
+        <div>
+          <div class="card">
+            <small>Designed for charities</small>
+            <h3>Understanding the CAIF landscape</h3>
+            <p style="font-size:0.9rem;color:var(--text-muted);">
+              CAIFs can offer governance, diversification and operational
+              simplicity for charities that do not wish to build bespoke
+              segregated portfolios. The challenge is choosing the right mix of
+              CAIFs and ensuring they genuinely support your objectives, risk
+              appetite and spending rules.
+            </p>
+            <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.6rem;">
+              Our work focuses on:
+            </p>
+            <ul style="margin:0.45rem 0 0 1.1rem;font-size:0.88rem;color:var(--text-muted);">
+              <li>How CAIFs sit within your overall policy and risk budget</li>
+              <li>Comparing CAIFs and other charity funds for your needs</li>
+              <li>Ensuring monitoring and reporting are trustee-friendly</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="stat-list">
+            <div class="stat">
+              <strong>Charity-specific focus</strong>
+              We work only with charities and similar organisations, not private
+              individuals, so our analysis is tailored to charity law,
+              governance and practical realities.
+            </div>
+            <div class="stat">
+              <strong>Product-agnostic</strong>
+              We do not manufacture funds or run a platform. Our role is to help
+              you judge whether your current CAIFs and charity funds remain
+              appropriate.
+            </div>
+            <div class="stat">
+              <strong>Pragmatic recommendations</strong>
+              We are outcome-focused: small, practical changes that trustees can
+              realistically implement and monitor.
+            </div>
+            <div class="stat">
+              <strong>Board-ready reporting</strong>
+              Clear, concise written reports and presentations that support
+              trustee decision-making and minutes.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" aria-labelledby="process-title">
+      <h2 id="process-title">How we work with you</h2>
+      <p class="section-lead">
+        A simple, structured process designed to give trustees clarity and
+        confidence, without adding unnecessary administrative burden.
+      </p>
+
+      <div class="process">
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-title">1. Introductory call</div>
+            <p class="process-step-body">
+              A short call with one or two trustees or senior staff to
+              understand your charity, the size and role of your investment
+              portfolio, and whether you are starting to invest or reviewing
+              existing CAIF holdings.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-title">2. Information gathering</div>
+            <p class="process-step-body">
+              We review your latest valuations, manager reports, IPS (if any),
+              spending rules and CAIF holdings. Where needed, we agree a simple
+              data request with your existing managers or platform.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-title">3. Analysis &amp; report</div>
+            <p class="process-step-body">
+              We analyse performance, risk, allocation, CAIF usage and costs
+              against your objectives and constraints, then produce a clear
+              report with traffic-light findings and practical options for the
+              board.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="process-step-title">4. Board discussion</div>
+            <p class="process-step-body">
+              We present our findings, answer questions and help you agree next
+              steps – whether that is refining your IPS, adjusting CAIF
+              allocations or running a structured re-tender.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <small>Example outcome</small>
+            <h3>From unease to a clear plan</h3>
+            <p>
+              A charity with a £7m long-term fund invested mainly in two CAIFs
+              had seen little real growth. Our review identified:
+            </p>
+            <ul style="margin:0.6rem 0 0.5rem 1.1rem;font-size:0.86rem;color:var(--text-muted);">
+              <li>Concentration in a single manager’s approach</li>
+              <li>Asset mix that was more cautious than intended</li>
+              <li>Fees at the upper end of typical ranges</li>
+            </ul>
+            <p style="font-size:0.86rem;color:var(--text-muted);">
+              We helped trustees refine their IPS, diversify across complementary
+              CAIFs and improve monitoring, giving the board greater confidence
+              in its oversight role.
+            </p>
+          </div>
+          <div class="process-note">
+            <strong>Clear scope &amp; fixed fees.</strong><br />
+            For most charities in the £1m–£20m range we offer the Portfolio
+            Health Check on a fixed-fee basis agreed in advance, so you always
+            know the cost before you commit.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About Millenne Advisors</h2>
+      <p class="section-lead">
+        Millenne Advisors was founded by investment professional
+        <strong>Aaron Jean-Baptiste, CFA</strong>, to bring institutional-style
+        investment oversight to charities that are too small to hire a full-time
+        CIO, but too important to accept unclear or disappointing outcomes.
+      </p>
+
+      <div class="split">
+        <div>
+          <p style="font-size:0.9rem;color:var(--text-muted);">
+            Aaron has experience across multi-asset portfolios and equity
+            research, including work on institutional mandates and manager
+            oversight. His work has contributed to improved investment
+            processes, cost savings and better risk management for clients.
+          </p>
+          <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0.75rem;">
+            Millenne Advisors focuses on being:
+          </p>
+          <ul style="margin:0.4rem 0 0 1.1rem;font-size:0.9rem;color:var(--text-muted);">
+            <li>Independent of any bank, platform or fund manager</li>
+            <li>Plain-English in communication with trustees</li>
+            <li>Evidence-based in analysis and recommendations</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="stat-list">
+            <div class="stat">
+              <strong>CFA charterholder</strong>
+              Globally recognised investment qualification with emphasis on
+              ethics, portfolio management and professional standards.
+            </div>
+            <div class="stat">
+              <strong>Multi-asset experience</strong>
+              Background in constructing and analysing diversified portfolios
+              across equities, bonds and other asset classes.
+            </div>
+            <div class="stat">
+              <strong>Cost-aware</strong>
+              Experience identifying fee inefficiencies and helping clients
+              understand what they pay – and why.
+            </div>
+            <div class="stat">
+              <strong>Mission-focused</strong>
+              A belief that every pound of a charity’s capital should support
+              its long-term purpose, not be eroded unnecessarily.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form (Formspree) -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Request a conversation</h2>
+      <p class="section-lead">
+        If your charity’s long-term fund is smaller today than a few years ago,
+        or you are about to invest for the first time and want to use CAIFs
+        thoughtfully, you can use this form to request an initial discussion.
+      </p>
+
+      <div class="contact-layout">
+        <form 
+          id="contact-form" 
+          action="https://formspree.io/f/mqavwbea"
+          method="POST"
+          >
+
+        <!-- Hidden subject line for your email -->
+        <input type="hidden" name="_subject" value="New charity enquiry from Millenne Advisors website" />
+
+        <!-- Honeypot field (spam protection) -->
+        <div style="display:none;">
+          <label>
+            If you are human, leave this field empty:
+            <input type="text" name="_gotcha" />
+          </label>
+        </div>
+
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" autocomplete="name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" autocomplete="email" type="email" required />
+          </div>
+          <div>
+            <label for="role">Role</label>
+            <input
+              id="role"
+              name="role"
+              placeholder="e.g. Chair of Trustees, Treasurer, CEO"
+            />
+          </div>
+          <div>
+            <label for="organisation">Charity / organisation</label>
+            <input id="organisation" name="organisation" required />
+          </div>
+          <div>
+            <label for="chairtyNo">Charity number</label>
+            <input id="charityNo" name="charityNo" type="number" required />
+          </div>
+          <div>
+            <label for="assets">Approximate long-term assets</label>
+            <select id="assets" name="assets">
+              <option value="">Please select</option>
+              <option value="under-1m">Under £1m</option>
+              <option value="1-5m">£1m–£5m</option>
+              <option value="5-20m">£5m–£20m</option>
+              <option value="20m-plus">Over £20m</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">What’s prompting this conversation?</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="For example: first-time investing with CAIFs, falling portfolio value, concerns about fees, upcoming trustee review…"
+              required
+            ></textarea>
+          </div>
+          <div>
+            <button class="btn-primary" type="submit">
+              Submit enquiry
+            </button>
+          </div>
+        </form>
+
+        <div class="disclaimer">
+          <strong>Important information</strong><br />
+          Millenne Advisors provides investment oversight and consulting to
+          charities and similar organisations. The information on this site is
+          general in nature and does not constitute personalised investment
+          advice to any individual. Any engagement would be subject to a written
+          scope of work and appropriate regulatory framework. Investment values
+          can go down as well as up, and you may not get back the amount
+          originally invested.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>
+        &copy; <span id="year"></span> Millenne Advisors. All rights reserved.
+      </span>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#services">Services</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Cookie helpers ---
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + encodeURIComponent(value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === " ") c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+      }
+      return null;
+    }
+
+    // --- Cookie banner logic ---
+    var cookieBanner = document.getElementById("cookie-banner");
+    var cookieAcceptBtn = document.getElementById("cookie-accept");
+    var cookieDeclineBtn = document.getElementById("cookie-decline");
+
+    function showCookieBanner() {
+      if (cookieBanner) cookieBanner.style.display = "block";
+    }
+
+    function hideCookieBanner() {
+      if (cookieBanner) cookieBanner.style.display = "none";
+    }
+
+    function handleCookieDecision(value) {
+      setCookie("cookieConsent", value, 365);
+      hideCookieBanner();
+      // In a real site, you would initialise analytics only if value === "accepted"
+    }
+
+    // --- Helpers ---
+    function scrollToSection(id) {
+      var el = document.getElementById(id);
+      if (el && typeof el.scrollIntoView === "function") {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    /*  This dummy function got replaced with Formspree 
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      alert(
+        "Thank you for your interest.\n\nThis demo site does not send emails, but on a live site this form would securely forward your enquiry to Millenne Advisors."
+      );
+      event.target.reset();
+      return false;
+    }
+    */
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Year in footer
+      var yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // Cookie consent
+      var consent = getCookie("cookieConsent");
+      if (!consent) {
+        showCookieBanner();
+      }
+
+      if (cookieAcceptBtn) {
+        cookieAcceptBtn.addEventListener("click", function () {
+          handleCookieDecision("accepted");
+        });
+      }
+      if (cookieDeclineBtn) {
+        cookieDeclineBtn.addEventListener("click", function () {
+          handleCookieDecision("essential-only");
+        });
+      }
+    });
+  </script>
+</body>
+</html>
